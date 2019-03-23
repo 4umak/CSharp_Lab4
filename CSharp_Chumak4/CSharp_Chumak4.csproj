@@ -60,7 +60,7 @@
     <Compile Include="Exceptions\WrongNameException.cs" />
     <Compile Include="Exceptions\WrongSurnameException.cs" />
     <Compile Include="Tools\RelayCommand.cs" />
-    <Compile Include="Tools\SorterByParam.cs" />
+    <Compile Include="Tools\PersonFilter.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserEditRegisterViewModel.cs" />
     <Compile Include="UserListViewModel.cs" />

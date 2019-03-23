@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace CSharp_Chumak4
+namespace CSharp_Chumak4.Tools
 {
    public class RelayCommand : ICommand
     {

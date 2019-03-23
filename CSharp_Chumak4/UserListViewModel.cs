@@ -19,9 +19,9 @@ namespace CSharp_Chumak4
         private RelayCommand _editCmd;
         private RelayCommand _registerCmd;
         private RelayCommand _clearFilterCmd;
-        public string FilterSortByParam { get; set; }
-        private static CollectionView _sortFilterParamsCollection;
-        public static CollectionView SortFilterParams => _sortFilterParamsCollection ?? (_sortFilterParamsCollection = new CollectionView(SorterByParam.FilterSortParams));
+        public string FilterByParam { get; set; }
+        private static CollectionView _filterParamsCollection;
+        public static CollectionView FilterParams => _filterParamsCollection ?? (_filterParamsCollection = new CollectionView(PersonFilter.FilterParams));
 
         public string FilterQuery
         {
@@ -35,9 +35,9 @@ namespace CSharp_Chumak4
         }
 
         public List<User> UsersShowList =>
-            (string.IsNullOrEmpty(FilterSortByParam) || string.IsNullOrEmpty(FilterQuery))
+            (string.IsNullOrEmpty(FilterByParam) || string.IsNullOrEmpty(FilterQuery))
                 ? _usersList
-                : _usersList.FilterByParam(FilterSortByParam, FilterQuery);
+                : _usersList.FilterByParam(FilterByParam, FilterQuery);
 
         public User SelectedUser {
             get => _selectedUser;

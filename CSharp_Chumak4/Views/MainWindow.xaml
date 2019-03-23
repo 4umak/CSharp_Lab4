@@ -22,19 +22,16 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.75*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="0.6*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="0.6*"/>
-                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <Button Foreground="Black" FontSize="25" Background="Transparent" FontStyle="Italic" Command ="{Binding RegisterCmd}" Margin="10,0.286,27.857,44.714" Content="Реєстрація" Grid.Row="4" Grid.RowSpan="2"/>
-            <Button Margin ="11,0,27.857,9.571" FontSize="25" Background="Transparent" FontStyle="Italic"
-                    Foreground="Black" Command ="{Binding DeleteCmd}" Content="Видалити" Grid.Row="2" Height="106" VerticalAlignment="Bottom"/>
-            <Button Margin ="11,13.571,27.857,169.571" Grid.Column="0" FontSize="24" Background="Transparent" FontStyle="Italic"
-                    Foreground="Black" Command ="{Binding EditCmd}" Content="Редагувати" Grid.RowSpan="2" Grid.Row="1"/>
+            <Button Foreground="#f9d335" FontSize="22" Background="Transparent" FontStyle="Italic" FontWeight="UltraBold" 
+                    Command ="{Binding RegisterCmd}" Margin="9" Content="Add new User" Grid.Row="0"/>
+            <Button Margin ="9" FontSize="22" Background="Transparent" FontStyle="Italic" FontWeight="UltraBold"
+                    Foreground="#f9d335" Command ="{Binding DeleteCmd}" Content="Delete" Grid.Row="2"/>
+            <Button Margin ="9" Grid.Column="0" FontSize="22" Background="Transparent" FontStyle="Italic" FontWeight="UltraBold"
+                    Foreground="#f9d335" Command ="{Binding EditCmd}" Content="Edit" Grid.Row="1"/>
 
         </Grid>
         <Grid Grid.Column="1">
@@ -68,17 +65,18 @@
                        HorizontalAlignment="Center" Width="220" Height="30">
                 Choose the property
             </TextBlock>
-            <ComboBox Grid.Row="1" FontSize="22" FontStyle="Italic" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Margin="9"
-                      Text="{Binding FilterSortByParam, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
-                      ItemsSource="{Binding Path=SortFilterParams}">
+            <ComboBox Grid.Row="1" Margin ="9" FontSize="22" Background="Transparent" FontStyle="Italic" FontWeight="UltraBold"
+                      Foreground="Black"
+                      Text="{Binding FilterByParam, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+                      ItemsSource="{Binding Path=FilterParams}">
             </ComboBox>
 
             <TextBox Grid.Row="2" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                      FontStyle="Italic" Text="{Binding FilterQuery, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="9">
             </TextBox>
 
-            <Button Grid.Row="3" FontSize="22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-                    Command="{Binding ClearFilterCmd }" Margin="9" Height="56" VerticalAlignment="Bottom">
+            <Button Grid.Row="3" Command="{Binding ClearFilterCmd }" Margin ="9" FontSize="22" 
+                    Background="Transparent" FontStyle="Italic" FontWeight="UltraBold" Foreground="#f9d335">
                 Clear!
             </Button>
 
